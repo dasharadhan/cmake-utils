@@ -47,8 +47,6 @@ add_subdirectory(external/cmake-utils)
 
 ```
 
----
-
 ## Available Modules
 
 ### 1. Project Versioning (`ParseVersion.cmake`)
@@ -83,8 +81,6 @@ Given the prefix `MY_APP`, the function sets:
 | `MY_APP_VERSION_PATCH`     | Patch version number.            | `0`          |
 | `MY_APP_IS_PRERELEASE`     | Boolean string (`true`/`false`). | `true`       |
 | `MY_APP_IS_PRERELEASE_INT` | Boolean flag (`1`/`0`).          | `1`          |
-
----
 
 ## Extending the Toolkit
 
