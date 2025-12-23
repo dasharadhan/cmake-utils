@@ -9,15 +9,7 @@ endif ()
 # parent scope.
 function (parse_project_version version_file variable_prefix)
 
-  # Check if file exists relative to the caller's current source directory
-  if (NOT IS_ABSOLUTE "${version_file}")
-    message("Version file not found at: ${version_file}")
-    set(version_file "${CMAKE_CURRENT_SOURCE_DIR}/${version_file}")
-    message(
-      "Setting version file relative to current source directory: ${version_file}"
-    )
-  endif ()
-
+  # Check if file exists
   if (NOT EXISTS "${version_file}")
     message(FATAL_ERROR "Version file not found at: ${version_file}")
   endif ()
