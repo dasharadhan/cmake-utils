@@ -48,10 +48,12 @@ function (parse_project_version version_file variable_prefix)
   list(GET local_version_list 2 local_patch)
 
   # Export variables to the caller's scope
-  set(${variable_prefix}_FULL "${local_raw_version}" PARENT_SCOPE)
-  set(${variable_prefix}_NUMERIC "${local_numeric_version}" PARENT_SCOPE)
-  set(${variable_prefix}_MAJOR "${local_major}" PARENT_SCOPE)
-  set(${variable_prefix}_MINOR "${local_minor}" PARENT_SCOPE)
-  set(${variable_prefix}_PATCH "${local_patch}" PARENT_SCOPE)
+  set(${variable_prefix}_VERSION_FULL "${local_raw_version}" PARENT_SCOPE)
+  set(${variable_prefix}_VERSION_NUMERIC "${local_numeric_version}"
+      PARENT_SCOPE
+  )
+  set(${variable_prefix}_VERSION_MAJOR "${local_major}" PARENT_SCOPE)
+  set(${variable_prefix}_VERSION_MINOR "${local_minor}" PARENT_SCOPE)
+  set(${variable_prefix}_VERSION_PATCH "${local_patch}" PARENT_SCOPE)
 
 endfunction ()
