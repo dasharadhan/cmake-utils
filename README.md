@@ -22,7 +22,7 @@ include(FetchContent)
 
 FetchContent_Declare(
   cmake_utils
-  GIT_REPOSITORY [https://github.com/dasharadhan/cmake-utils.git](https://github.com/dasharadhan/cmake-utils.git)
+  GIT_REPOSITORY https://github.com/dasharadhan/cmake-utils.git
   GIT_TAG        main
 )
 
@@ -36,7 +36,7 @@ FetchContent_MakeAvailable(cmake_utils)
 1. Add the submodule:
 
 ```bash
-git submodule add [https://github.com/dasharadhan/cmake-utils.git](https://github.com/dasharadhan/cmake-utils.git) external/cmake-utils
+git submodule add https://github.com/dasharadhan/cmake-utils.git external/cmake-utils
 
 ```
 
@@ -61,7 +61,7 @@ Reads a standard semantic version file (e.g., `version.txt`), parses it, and exp
 include(ParseVersion)
 
 # Usage: parse_project_version(<version_file> <variable_prefix>)
-parse_project_version("version.txt" "MY_APP_VERSION")
+parse_project_version("version.txt" "MY_APP")
 
 ```
 
@@ -74,14 +74,15 @@ parse_project_version("version.txt" "MY_APP_VERSION")
 
 Given the prefix `MY_APP`, the function sets:
 
-| Variable               | Description                      | Example      |
-| ---------------------- | -------------------------------- | ------------ |
-| `MY_APP_FULL`          | The raw string from the file.    | `2.1.0-beta` |
-| `MY_APP_NUMERIC`       | The numeric component only.      | `2.1.0`      |
-| `MY_APP_MAJOR`         | Major version number.            | `2`          |
-| `MY_APP_MINOR`         | Minor version number.            | `1`          |
-| `MY_APP_PATCH`         | Patch version number.            | `0`          |
-| `MY_APP_IS_PRERELEASE` | Boolean string (`true`/`false`). | `true`       |
+| Variable                   | Description                      | Example      |
+| -------------------------- | -------------------------------- | ------------ |
+| `MY_APP_VERSION_FULL`      | The raw string from the file.    | `2.1.0-beta` |
+| `MY_APP_VERSION_NUMERIC`   | The numeric component only.      | `2.1.0`      |
+| `MY_APP_VERSION_MAJOR`     | Major version number.            | `2`          |
+| `MY_APP_VERSION_MINOR`     | Minor version number.            | `1`          |
+| `MY_APP_VERSION_PATCH`     | Patch version number.            | `0`          |
+| `MY_APP_IS_PRERELEASE`     | Boolean string (`true`/`false`). | `true`       |
+| `MY_APP_IS_PRERELEASE_INT` | Boolean flag (`1`/`0`).          | `1`          |
 
 ---
 
