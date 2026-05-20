@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/dasharadhan/cmake-utils/compare/v1.0.1...v1.1.0) (2026-05-20)
+
+### Features
+
+* add utility to find doxygen tag files ([214514e](https://github.com/dasharadhan/cmake-utils/commit/214514e2b03e6a449ea5a8bfd2700cdfb6fa9869))
+
 ## [1.0.1](https://github.com/dasharadhan/cmake-utils/compare/v1.0.0...v1.0.1) (2025-12-23)
 
 ### Bug Fixes
