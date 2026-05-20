@@ -82,6 +82,37 @@ Given the prefix `MY_APP`, the function sets:
 | `MY_APP_IS_PRERELEASE`     | Boolean string (`true`/`false`). | `true`       |
 | `MY_APP_IS_PRERELEASE_INT` | Boolean flag (`1`/`0`).          | `1`          |
 
+### 2. Finding Doxygen Documentation Tags (`FindDoxygenTags.cmake`)
+
+Finds the Doxygen documentation tags of dependencies if they exist. Used to link the project documentation generated using Doxygen against the documentation of the dependency libraries. Requires the dependency libraries to export the paths to the tag files.
+
+**Usage:**
+
+```cmake
+# Find dependencies
+find_package(libA REQUIRED)
+find_package(libB REQUIRED)
+find_package(libC REQUIRED)
+
+# Provided that lib<A/B/C> exports lib<A/B/C>_TAG_FILE and lib<A/B/C>_DOCS_URL
+# find_doxygen_tags exports a space-separated string of tagfile=url pairs, one per dependency
+# Usage:
+#   find_doxygen_tags(
+#       DEPENDENCIES <dependencies>
+#       TAGFILES_OUT <string_of_tagfiles>
+#   )
+find_doxygen_tags(
+    DEPENDENCIES libA libB libC
+    TAGFILES_OUT DOXYGEN_TAGFILES
+)
+
+```
+
+**Parameters:**
+
+- **`DEPENDENCIES`**: A space-separated list of dependent packages
+- **`TAGFILES_OUT`**: The variables which will hold the resulting tagfile string
+
 ## Extending the Toolkit
 
 To add new functionality (e.g., compiler warnings, sanitizer helpers), follow this pattern to ensure safety across submodules:
