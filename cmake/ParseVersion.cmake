@@ -11,7 +11,10 @@ function (parse_project_version version_file variable_prefix)
 
   # Check if file exists
   if (NOT EXISTS "${version_file}")
-    message(FATAL_ERROR "Version file not found at: ${version_file}")
+    message(
+      FATAL_ERROR
+        "parse_project_version: version file not found at ${version_file}"
+    )
   endif ()
 
   # Read and strip whitespace
